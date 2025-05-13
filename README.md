@@ -54,10 +54,10 @@ Table 1 provides a summary of the main characteristics as well as sub-characteri
 <br>
 <sup>3</sup> *Empirical Evaluation*: An empirical evaluation involves experimentation or observation, often using real-world deployments, simulations, or prototypes.
 
-## Authors and Citation
+## Publication and Citation
 
-- Authors: Rodi Jolak et al. "SCENE: Guidelines for Security Chaos Engineering based on a Systematic Literature Review".
-- Citation: to appear.
+- Publication: Rodi Jolak et al. "SCENE: Guidelines for Security Chaos Engineering based on a Systematic Literature Review".
+- How to cite: to appear.
 
 ## Badges
 
