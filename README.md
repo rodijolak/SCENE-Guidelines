@@ -2,7 +2,10 @@
 SCENE is a comprehensive set of guidelines for systematically reporting Security Chaos Engineering (SCE).
 SCENE aims to help  SCE creators and developers in enabling informed decision-making, ensuring clarity, facilitating replication, and supporting the development of robust SCE strategies and practices tailored to specific systems and threat landscapes.
 
-Figure [] shows the aspetcs or characterstics useful for reporting SCE techniques and practices, which form the basis for SCENE guidelines. These characteristics are as follows:
+Figure 1 shows the aspetcs or characterstics useful for reporting SCE techniques and practices, which form the basis for SCENE guidelines. These characteristics are as follows:
+<p align="center">
+  <img src="images/SCENE.pdf" alt="Figure 1. SCENE guidelines for Reporting SCE techniques and practices" width="400"/>
+</p>
 
 First: It is important to report the “Applicability” of the developed SCE technique. The applicability characteristic provides a comprehensive understanding of the technique’s relevance, ensuring that stakeholders can assess the technique’s value and suitability for their specific needs. By detailing the identified security challenges, the creators can highlight and motivate the specific issues the technique addresses. The contribution or goal outlines the intended outcomes, ensuring clarity on what the technique aims to achieve. The application domain helps in identifying the contexts in which the technique is most beneficial, guiding potential users on where and how to apply it effectively. Finally, the use cases demonstrate practical applications, showcasing how the technique can be implemented in real-world scenarios.
 
