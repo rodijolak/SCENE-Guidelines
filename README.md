@@ -13,8 +13,34 @@ Third: Considering the “Effect”, it provides a comprehensive understanding o
 Fourth: The “Evaluation” of the SCE technique should be comprehensively reported since it promotes transparency and credibility. By detailing the type or method of evaluation, whether analytical, empirical, or both, creators can communicate the practicality of the conducted evaluation. Moreover, describing how the evaluation was conducted, sharing the replication package, and reporting the used quantitative and qualitative metrics (e.g., time to complete an attack or security performance) promote replication and help stakeholders understand the effectiveness and efficiency of the SCE technique. Finally, summarizing the results and lessons learned highlights
 practical implications, pros, cons, and potential side effects. This enables SCE practitioners making informed decisions about adopting or improving the SCE technique.
 
-Table [] summarise the main characteristics as well as sub-characteristics and provides an description or example of each characteristic. 
+Table 1 summarise the main characteristics as well as sub-characteristics and provides an description or example of each characteristic. 
 
+
+### Table 1: SCENE for Categorization of Techniques for Supporting Resilience Using Security Chaos Engineering.
+
+| **Characteristic**              | **Sub-Characteristic**                   | **Description or Example**                                                                 |
+|--------------------------|------------------------------------|---------------------------------------------------------------------------------------------|
+| Applicability            | Identified Security Challenges     | The motivation for using SCE for cybersecurity, e.g., limitations of other approaches and increasing confidence in system resilience. |
+|                          | Contribution/Goal                  | The main objective of the study and the main contribution, e.g., a SCE framework for early threat detection. |
+|                          | Application Domain                 | E.g., general purpose, IoT, cloud.                                                          |
+|                          | Use Cases                          | E.g., improve resilience, identification of vulnerabilities.                                |
+| Technical Characteristics| Prerequisites                      | E.g., system design, specific data.                                                         |
+|                          | Required Resources                 | Required hardware and software resources, e.g., sensors, virtual machines.                 |
+|                          | Attack Scenarios                   | Methodology used to derive attack scenarios, e.g., attack trees, attack goals.             |
+|                          | SCE Approach                       | A description of the SCE approach including main steps and processes.                      |
+|                          | TRL                                | The Technical Readiness Level* of the proposed approach.                                    |
+|                          | Use of AI                          | Whether the approach utilizes artificial intelligence.                                     |
+| Effect                   | Targeted Security Threats or Attacks | What STRIDE threats are targeted.                                                         |
+|                          | Type of Injected Faults            | E.g., misconfiguration, data/resource injections.                                          |
+| Evaluation               | Method                             | Analytical**, Empirical**, Both.                                                               |
+|                          | Description                        | Description of how the evaluation was conducted.                                           |
+|                          | Metrics                            | Quantitative and qualitative criteria and metrics used in the evaluation e.g., time to complete attack, security performance. |
+|                          | Results of the Evaluation          | The results of the evaluation in terms of the evaluation criteria.                         |
+|                          | Lessons Learned                    | Pros, cons, side effects.                                                                  |
+
+* TRL: J. C. Mankins et al., “Technology readiness levels,” White Paper, April, vol. 6, no. 1995, 1995.
+** Analystical Evaluation: An analytical evaluation focuses on theoretical analysis or formal methods
+** Empirical Evaluation: An empirical evaluation involves experimentation or observation, often using real-world deployments, simulations, or prototypes.
 
 ## Authors and Citation
 
