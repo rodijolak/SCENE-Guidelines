@@ -28,19 +28,19 @@ Table 1 summarise the main characteristics as well as sub-characteristics and pr
 |                          | Required Resources                 | Required hardware and software resources, e.g., sensors, virtual machines.                 |
 |                          | Attack Scenarios                   | Methodology used to derive attack scenarios, e.g., attack trees, attack goals.             |
 |                          | SCE Approach                       | A description of the SCE approach including main steps and processes.                      |
-|                          | TRL                                | The Technical Readiness Level* of the proposed approach.                                    |
+|                          | TRL                                | The Technical Readiness Level[^a] of the proposed approach.                                    |
 |                          | Use of AI                          | Whether the approach utilizes artificial intelligence.                                     |
 | Effect                   | Targeted Security Threats or Attacks | What STRIDE threats are targeted.                                                         |
 |                          | Type of Injected Faults            | E.g., misconfiguration, data/resource injections.                                          |
-| Evaluation               | Method                             | Analytical**, Empirical**, Both.                                                               |
+| Evaluation               | Method                             | Analytical[^b], Empirical[^c], Both.                                                               |
 |                          | Description                        | Description of how the evaluation was conducted.                                           |
 |                          | Metrics                            | Quantitative and qualitative criteria and metrics used in the evaluation e.g., time to complete attack, security performance. |
 |                          | Results of the Evaluation          | The results of the evaluation in terms of the evaluation criteria.                         |
 |                          | Lessons Learned                    | Pros, cons, side effects.                                                                  |
 
-* TRL: J. C. Mankins et al., “Technology readiness levels,” White Paper, April, vol. 6, no. 1995, 1995.
-** Analystical Evaluation: An analytical evaluation focuses on theoretical analysis or formal methods
-** Empirical Evaluation: An empirical evaluation involves experimentation or observation, often using real-world deployments, simulations, or prototypes.
+[^a] TRL: J. C. Mankins et al., “Technology readiness levels,” White Paper, April, vol. 6, no. 1995, 1995.
+[^b] Analystical Evaluation: An analytical evaluation focuses on theoretical analysis or formal methods
+[^c] Empirical Evaluation: An empirical evaluation involves experimentation or observation, often using real-world deployments, simulations, or prototypes.
 
 ## Authors and Citation
 
