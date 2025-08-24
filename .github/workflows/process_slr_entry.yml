@@ -1,0 +1,100 @@
+name: Process SLR Entry (PR-based)
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue number to process (optional for manual run)"
+        required: false
+        type: number
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: read
+
+jobs:
+  process-slr-entry:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+
+      - name: Install dependencies
+        run: pip install pandas tabulate
+
+      - name: Determine issue number and body
+        id: get-issue
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ -n "${{ inputs.issue_number }}" ]; then
+              ISSUE_NUM="${{ inputs.issue_number }}"
+            else
+              echo "No issue number provided, fetching latest open issue..."
+              ISSUE_NUM=$(gh api repos/${{ github.repository }}/issues \
+                --jq 'map(select(.state=="open" and .pull_request | not)) | sort_by(.created_at) | reverse | .[0].number')
+            fi
+            ISSUE_BODY=$(gh api repos/${{ github.repository }}/issues/$ISSUE_NUM --jq '.body')
+          else
+            ISSUE_NUM="${{ github.event.issue.number }}"
+            ISSUE_BODY="${{ github.event.issue.body }}"
+          fi
+
+          echo "ISSUE_NUM=$ISSUE_NUM" >> $GITHUB_ENV
+          {
+            echo "ISSUE_BODY<<EOF"
+            echo "$ISSUE_BODY"
+            echo "EOF"
+          } >> $GITHUB_ENV
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Switch to new branch
+        run: |
+          BRANCH="slr-entry-${ISSUE_NUM}"
+
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git checkout -b "$BRANCH"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run script to update CSV & README
+        run: python -u scripts/add_slr_entry_from_issue.py
+
+      - name: Commit changes
+        run: |
+          BRANCH="slr-entry-${ISSUE_NUM}"
+          git add .
+          git commit -m "Add SLR entry from issue #${ISSUE_NUM}" || echo "No changes to commit"
+          git push --force origin "$BRANCH"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create Pull Request if none exists
+        run: |
+          BRANCH="slr-entry-${ISSUE_NUM}"
+
+          # Check if a PR already exists from this branch
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --base main --state open --json number --jq '.[0].number')
+
+          if [ -z "$EXISTING_PR" ]; then
+            echo "No existing PR found, creating a new one..."
+            gh pr create \
+              --head "$BRANCH" \
+              --base main \
+              --title "Add SLR entry from issue #${ISSUE_NUM}" \
+              --body "This PR adds the SLR entry from issue #${ISSUE_NUM}.
+            Closes #${ISSUE_NUM}"
+          else
+            echo "A pull request already exists: $(gh pr view $EXISTING_PR --json url --jq '.url')"
+          fi
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
