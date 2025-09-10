@@ -5,6 +5,47 @@ import os
 from pathlib import Path
 from tabulate import tabulate
 import yaml
+import matplotlib.pyplot as plt
+
+
+def plot_papers_per_category_year(df, category_col, output_path):
+    """
+    Plot stacked bar chart of papers per category (e.g., TRL or AI) per year.
+    """
+    # Ensure Year is numeric (drop non-numeric like "NA")
+    df = df.copy()
+    df["Year"] = pd.to_numeric(df["Year"], errors="coerce")
+
+    # Drop rows without valid Year
+    df = df.dropna(subset=["Year"])
+    df["Year"] = df["Year"].astype(int)
+
+    # Ensure category column is categorical
+    if df[category_col].dtype != "category":
+        df[category_col] = df[category_col].astype("category")
+
+    # Count papers per category per year
+    counts = (
+        df.groupby(["Year", category_col], observed=False)
+        .size()
+        .reset_index(name="count")
+    )
+
+    # Pivot for plotting
+    pivot_df = counts.pivot(index="Year", columns=category_col, values="count").fillna(
+        0
+    )
+
+    # Plot
+    pivot_df.plot(kind="bar", stacked=True, figsize=(10, 6))
+    plt.title(f"Number of papers per year classified by {category_col}")
+    plt.ylabel("Number of Papers")
+    plt.xlabel("Year")
+    plt.legend(title=category_col, loc="upper left")
+    plt.grid(axis="y", linestyle="--", alpha=0.7)
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=300)
+
 
 # Load the issue body from environment variable (preferred) or file
 body = os.environ.get("ISSUE_BODY", "")
@@ -86,9 +127,19 @@ if domain_other:
         domains_path.write_text(json.dumps(domains, indent=2))
     domain_selected = domain_other
 
+# Extract year and enforce integer
+year_str = extract_field("Year").strip()
+if not year_str:
+    raise ValueError("Year field is required but missing.")
+
+try:
+    year_val = int(year_str)
+except ValueError:
+    raise ValueError(f"Invalid Year value: {year_str}. Must be an integer.")
+
 entry = {
     "DOI": extract_field("DOI"),
-    "Year": extract_field("Year"),
+    "Year": year_val,
     "Domain": domain_selected,
     "TRL": extract_field("TRL"),
     "AI": extract_field("AI-based"),
@@ -138,6 +189,8 @@ df.to_csv("slr.csv", index=False)
 print("\n--- UPDATED CSV CONTENT ---")
 print(tabulate(df, headers="keys", tablefmt="pretty", showindex=False))
 print("--------------------------------\n")
+
+plot_papers_per_category_year(df, "AI", "papers_with_ai_per_year.png")
 
 # --- Update issue form ---
 if domain_other or fault_injection_other:

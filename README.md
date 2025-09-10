@@ -1,6 +1,7 @@
-# SCENE Guidelines for Security Chaos Engineering
+# SCENE Guidelines and Live SLR for Security Chaos Engineering
+
 SCENE is a comprehensive set of guidelines for systematically reporting Security Chaos Engineering (SCE).
-SCENE aims to help  SCE creators and developers in enabling informed decision-making, ensuring clarity, facilitating replication, and supporting the development of robust SCE strategies and practices tailored to specific systems and threat landscapes.
+SCENE aims to help SCE creators and developers in enabling informed decision-making, ensuring clarity, facilitating replication, and supporting the development of robust SCE strategies and practices tailored to specific systems and threat landscapes.
 
 Figure 1 shows the aspects or characteristics useful for reporting SCE techniques and practices, which form the basis for SCENE guidelines. These characteristics are as follows:
 
@@ -22,36 +23,59 @@ Figure 1 shows the aspects or characteristics useful for reporting SCE technique
 **4. Evaluation**: The “Evaluation” of the SCE technique should be comprehensively reported since it promotes transparency and credibility. By detailing the type or method of evaluation, whether analytical, empirical, or both, creators can communicate the practicality of the conducted evaluation. Moreover, describing how the evaluation was conducted, sharing the replication package, and reporting the used quantitative and qualitative metrics (e.g., time to complete an attack or security performance) promote replication and help stakeholders understand the effectiveness and efficiency of the SCE technique. Finally, summarizing the results and lessons learned highlights
 practical implications, pros, cons, and potential side effects. This enables SCE practitioners making informed decisions about adopting or improving the SCE technique.
 
-Table 1 provides a summary of the main characteristics as well as sub-characteristics and reports a description or example of each characteristic. 
+Table 1 provides a summary of the main characteristics as well as sub-characteristics and reports a description or example of each characteristic.
 
 <br>
 
 **Table 1: SCENE for Categorization of Techniques for Supporting Resilience Using Security Chaos Engineering.**
-| **Characteristic**              | **Sub-Characteristic**                   | **Description or Example**                                                                 |
+| **Characteristic** | **Sub-Characteristic** | **Description or Example** |
 |--------------------------|------------------------------------|---------------------------------------------------------------------------------------------|
-| Applicability            | Identified Security Challenges     | The motivation for using SCE for cybersecurity, e.g., limitations of other approaches and increasing confidence in system resilience. |
-|                          | Contribution/Goal                  | The main objective of the study and the main contribution, e.g., a SCE framework for early threat detection. |
-|                          | Application Domain                 | E.g., general purpose, IoT, cloud.                                                          |
-|                          | Use Cases                          | E.g., improve resilience, identification of vulnerabilities.                                |
-| Technical Characteristics| Prerequisites                      | E.g., system design, specific data.                                                         |
-|                          | Required Resources                 | Required hardware and software resources, e.g., sensors, virtual machines.                 |
-|                          | Attack Scenarios                   | Methodology used to derive attack scenarios, e.g., attack trees, attack goals.             |
-|                          | SCE Approach                       | A description of the SCE approach including main steps and processes.                      |
-|                          | TRL                                | The Technical Readiness Level<sup>1</sup> of the proposed approach.                                    |
-|                          | Use of AI                          | Whether the approach utilizes artificial intelligence.                                     |
-| Effect                   | Targeted Security Threats or Attacks | What STRIDE threats are targeted.                                                         |
-|                          | Type of Injected Faults            | E.g., misconfiguration, data/resource injections.                                          |
-| Evaluation               | Method                             | Analytical<sup>2</sup>, Empirical<sup>3</sup>, Both.                                                               |
-|                          | Description                        | Description of how the evaluation was conducted.                                           |
-|                          | Metrics                            | Quantitative and qualitative criteria and metrics used in the evaluation e.g., time to complete attack, security performance. |
-|                          | Results of the Evaluation          | The results of the evaluation in terms of the evaluation criteria.                         |
-|                          | Lessons Learned                    | Pros, cons, side effects.                                                                  |
+| Applicability | Identified Security Challenges | The motivation for using SCE for cybersecurity, e.g., limitations of other approaches and increasing confidence in system resilience. |
+| | Contribution/Goal | The main objective of the study and the main contribution, e.g., a SCE framework for early threat detection. |
+| | Application Domain | E.g., general purpose, IoT, cloud. |
+| | Use Cases | E.g., improve resilience, identification of vulnerabilities. |
+| Technical Characteristics| Prerequisites | E.g., system design, specific data. |
+| | Required Resources | Required hardware and software resources, e.g., sensors, virtual machines. |
+| | Attack Scenarios | Methodology used to derive attack scenarios, e.g., attack trees, attack goals. |
+| | SCE Approach | A description of the SCE approach including main steps and processes. |
+| | TRL | The Technical Readiness Level<sup>1</sup> of the proposed approach. |
+| | Use of AI | Whether the approach utilizes artificial intelligence. |
+| Effect | Targeted Security Threats or Attacks | What STRIDE threats are targeted. |
+| | Type of Injected Faults | E.g., misconfiguration, data/resource injections. |
+| Evaluation | Method | Analytical<sup>2</sup>, Empirical<sup>3</sup>, Both. |
+| | Description | Description of how the evaluation was conducted. |
+| | Metrics | Quantitative and qualitative criteria and metrics used in the evaluation e.g., time to complete attack, security performance. |
+| | Results of the Evaluation | The results of the evaluation in terms of the evaluation criteria. |
+| | Lessons Learned | Pros, cons, side effects. |
 
-<sup>1</sup> *[TRL](https://en.wikipedia.org/wiki/Technology_readiness_level)*: J. C. Mankins et al., “Technology readiness levels,” White Paper, April, vol. 6, no. 1995, 1995. 
+<sup>1</sup> _[TRL](https://en.wikipedia.org/wiki/Technology_readiness_level)_: J. C. Mankins et al., “Technology readiness levels,” White Paper, April, vol. 6, no. 1995, 1995.
 <br>
-<sup>2</sup> *Analytical Evaluation*: An analytical evaluation focuses on theoretical analysis or formal methods
+<sup>2</sup> _Analytical Evaluation_: An analytical evaluation focuses on theoretical analysis or formal methods
 <br>
-<sup>3</sup> *Empirical Evaluation*: An empirical evaluation involves experimentation or observation, often using real-world deployments, simulations, or prototypes.
+<sup>3</sup> _Empirical Evaluation_: An empirical evaluation involves experimentation or observation, often using real-world deployments, simulations, or prototypes.
+
+## AI Usage in Papers
+
+<figure>
+  <img src="papers_with_ai_per_year.png" alt="Number of AI-based papers per year" width="600">
+  <figcaption><strong>Figure 2:</strong> Number of AI-based papers published per year.</figcaption>
+</figure>
+
+---
+
+## Contributing New Entries
+
+This repository contains scripts to maintain a **live Systematic Literature Review (SLR)** for Security Chaos Engineering.
+
+You can add a new entry to the SLR by creating a GitHub **issue** and filling out the provided issue form. The automated workflow will:
+
+1. Extract the relevant information from the issue.
+2. Update the SLR CSV and README.
+3. Open a Pull Request with the new entry.
+
+Make sure to fill in all required fields, and optionally the free-text fields, for more detailed information.
+
+> ⚠️ If the script encounters errors while processing your issue, the workflow will comment on the issue with the error details and close it. You can fix the errors and re-open the issue to retry.
 
 ## Publication and Citation
 

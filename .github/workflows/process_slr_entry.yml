@@ -13,7 +13,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  issues: read
+  issues: write
 
 jobs:
   process-slr-entry:
@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-python@v5
 
       - name: Install dependencies
-        run: pip install pandas tabulate
+        run: pip install pandas tabulate matplotlib
 
       - name: Determine issue number and body
         id: get-issue
@@ -68,7 +68,25 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Run script to update CSV & README
-        run: python -u scripts/add_slr_entry_from_issue.py
+        id: run-script
+        run: |
+          set +e
+          python -u scripts/add_slr_entry_from_issue.py 2>&1 | tee script_output.log
+          EXIT_CODE=${PIPESTATUS[0]}
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_ENV
+          exit $EXIT_CODE
+        continue-on-error: true
+
+      - name: Handle script failure
+        if: env.exit_code != '0'
+        run: |
+          echo "Python script failed. Posting error to issue #${ISSUE_NUM}..."
+          ERROR_MSG=$(cat script_output.log | tail -n 50 | sed 's/"/\\"/g')
+          gh issue comment $ISSUE_NUM --body ":x: **Processing failed**\n\`\`\`\n$ERROR_MSG\n\`\`\`"
+          gh issue close $ISSUE_NUM --comment "Closing this issue because processing failed. Please correct the errors and re-open."
+          exit 1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit changes
         run: |
