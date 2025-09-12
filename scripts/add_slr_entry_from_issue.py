@@ -182,7 +182,11 @@ required_fields = [
     "Fault Injection",
     "Evaluation Method",
 ]
-df[required_fields] = df[required_fields].fillna("NA")
+df[required_fields] = (
+    df[required_fields]
+    .replace("", "NA")  # replace empty strings
+    .fillna("NA")  # replace NaN
+)
 df.to_excel("slr.xlsx", index=False)
 
 # --- Debug print of updated excel ---
