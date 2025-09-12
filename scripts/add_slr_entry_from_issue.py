@@ -167,8 +167,8 @@ for k, v in entry.items():
     print(f"{k}: {v}")
 print("------------------------\n")
 
-# --- Append to CSV ---
-df = pd.read_csv("slr.csv")
+# --- Append to excel ---
+df = pd.read_excel("slr.xlsx")
 df.columns = df.columns.str.strip()
 df = pd.concat([df, pd.DataFrame([entry])], ignore_index=True)
 required_fields = [
@@ -183,10 +183,10 @@ required_fields = [
     "Evaluation Method",
 ]
 df[required_fields] = df[required_fields].fillna("NA")
-df.to_csv("slr.csv", index=False)
+df.to_excel("slr.xlsx", index=False)
 
-# --- Debug print of updated CSV ---
-print("\n--- UPDATED CSV CONTENT ---")
+# --- Debug print of updated excel ---
+print("\n--- UPDATED excel CONTENT ---")
 print(tabulate(df, headers="keys", tablefmt="pretty", showindex=False))
 print("--------------------------------\n")
 
