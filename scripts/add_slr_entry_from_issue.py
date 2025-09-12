@@ -208,7 +208,7 @@ if domain_other or fault_injection_other:
                 "type": "input",
                 "id": "doi",
                 "attributes": {"label": "DOI", "placeholder": "10.5281/zenodo.XXXXXXX"},
-                "validations": {"required": True},
+                "validations": {"required": False},
             },
             {
                 "type": "input",
@@ -266,13 +266,13 @@ if domain_other or fault_injection_other:
                 "validations": {"required": True},
             },
             {
-                "type": "dropdown",
+                "type": "input",
                 "id": "attack_scenarios",
                 "attributes": {
                     "label": "Attack Scenarios",
-                    "options": ["Yes", "No"],
+                    "description": "Leave blank if not applicable",
                 },
-                "validations": {"required": True},
+                "validations": {"required": False},
             },
             {
                 "type": "dropdown",

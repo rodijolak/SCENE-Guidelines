@@ -10,7 +10,7 @@ body:
       label: DOI
       placeholder: 10.5281/zenodo.XXXXXXX
     validations:
-      required: true
+      required: false
   - type: input
     id: year
     attributes:
@@ -78,15 +78,13 @@ body:
         - NA
     validations:
       required: true
-  - type: dropdown
+  - type: input
     id: attack_scenarios
     attributes:
       label: Attack Scenarios
-      options:
-        - "Yes"
-        - "No"
+      description: Leave blank if not applicable
     validations:
-      required: true
+      required: false
   - type: dropdown
     id: fault_injections
     attributes:
