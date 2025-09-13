@@ -1,0 +1,195 @@
+name: Add SLR Entry
+description: Submit a new study for inclusion in the SLR
+title: "[SLR Entry] "
+labels:
+  - slr-entry
+body:
+  - type: input
+    id: doi
+    attributes:
+      label: DOI
+      placeholder: 10.5281/zenodo.XXXXXXX
+    validations:
+      required: false
+  - type: input
+    id: year
+    attributes:
+      label: Year
+      placeholder: YYYY
+      description: Enter the 4-digit publication year (e.g., 2025)
+    validations:
+      required: true
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Domain
+      multiple: true
+      options:
+        - Cloud
+        - General Purpose
+        - Cyber-Physical Systems
+        - Systems of Systems
+        - Operational Technologies
+        - Open Systems Architecture
+        - Internet of Things
+        - Other (please specify below)
+        - NA
+    validations:
+      required: true
+  - type: input
+    id: domain_other_specify
+    attributes:
+      label: If Domain is 'Other', please specify below
+      description: Leave blank if not applicable
+    validations:
+      required: false
+  - type: dropdown
+    id: trl
+    attributes:
+      label: TRL
+      options:
+        - 1-3
+        - 4-6
+        - 7-9
+        - NA
+    validations:
+      required: true
+  - type: dropdown
+    id: ai
+    attributes:
+      label: AI-based
+      options:
+        - "Yes"
+        - "No"
+    validations:
+      required: true
+  - type: dropdown
+    id: targeted_threats
+    attributes:
+      label: Targeted Threats
+      multiple: true
+      options:
+        - S (Spoofing)
+        - T (Tampering)
+        - R (Repudiation)
+        - I (Information Disclosure)
+        - D (Denial of Service)
+        - E (Elevation of Privilege)
+        - NA
+    validations:
+      required: true
+  - type: input
+    id: attack_scenarios
+    attributes:
+      label: Attack Scenarios
+      description: Leave blank if not applicable
+    validations:
+      required: false
+  - type: dropdown
+    id: fault_injections
+    attributes:
+      label: Fault Injection
+      multiple: true
+      options:
+        - T1 (Disable functionality or system elements)
+        - T2 (Manipulation of configuration)
+        - T3 (Credentials misuse)
+        - T4 (Various Denial of Service (DoS) injections)
+        - T5 (Data and resource injections)
+        - T6 (Environment-related)
+        - Other (please specify below)
+        - NA
+    validations:
+      required: true
+  - type: input
+    id: fault_injection_other_specify
+    attributes:
+      label:
+        If Fault Injection is 'Other', please specify below new fault Injection
+        types separated by commas (new ID will be automatically generated)
+      description: Leave blank if not applicable
+    validations:
+      required: false
+  - type: dropdown
+    id: evaluation_method
+    attributes:
+      label: Evaluation Method
+      multiple: true
+      options:
+        - Empirical
+        - Analytical
+        - NA
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 📝 Optional Information
+        *(Fill in if applicable, otherwise leave blank)*
+  - type: input
+    id: security_challenges
+    attributes:
+      label: Identified Security Challenges
+    validations:
+      required: false
+  - type: input
+    id: contributions
+    attributes:
+      label: Contributions
+    validations:
+      required: false
+  - type: input
+    id: use_case_description
+    attributes:
+      label: Use Case Description
+    validations:
+      required: false
+  - type: input
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+    validations:
+      required: false
+  - type: input
+    id: sce_approach
+    attributes:
+      label: SCE Approach Description
+    validations:
+      required: false
+  - type: input
+    id: required_resources
+    attributes:
+      label: Required Resources
+    validations:
+      required: false
+  - type: input
+    id: evaluation_approach_description
+    attributes:
+      label: Evaluation Approach Description
+    validations:
+      required: false
+  - type: input
+    id: evaluation_metrics
+    attributes:
+      label: Evaluation Metrics
+    validations:
+      required: false
+  - type: input
+    id: evaluation_results
+    attributes:
+      label: Evaluation Results
+    validations:
+      required: false
+  - type: input
+    id: lessons_learned
+    attributes:
+      label: Lessons Learned
+    validations:
+      required: false
+  - type: input
+    id: additional_info
+    attributes:
+      label: Additional Information
+    validations:
+      required: false
