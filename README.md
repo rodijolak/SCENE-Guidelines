@@ -70,7 +70,7 @@ This repository contains scripts to maintain a **live Systematic Literature Revi
 You can add a new entry to the SLR by creating a GitHub **issue** and filling out the provided issue form. The automated workflow will:
 
 1. Extract the relevant information from the issue.
-2. Update the SLR CSV and README.
+2. Update the SLR Excel and README.
 3. Open a Pull Request with the new entry.
 
 Make sure to fill in all required fields, and optionally the free-text fields, for more detailed information.
