@@ -12,6 +12,20 @@ body:
     validations:
       required: false
   - type: input
+    id: paper_title
+    attributes:
+      label: Paper title
+    validations:
+      required: true
+  - type: input
+    id: authors
+    attributes:
+      label: Author(s)
+      placeholder: Jane Doe, John Smith, Alice Wong
+      description: Separate each author with a comma (,). Keep the order as it appears in the citation.
+    validations:
+      required: true
+  - type: input
     id: year
     attributes:
       label: Year
