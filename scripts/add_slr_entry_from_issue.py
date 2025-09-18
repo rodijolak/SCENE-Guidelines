@@ -139,6 +139,8 @@ except ValueError:
 
 entry = {
     "DOI": extract_field("DOI"),
+    "Title": extract_field("Paper title"),
+    "Authors": extract_field("Author(s)"),
     "Year": year_val,
     "Domain": domain_selected,
     "TRL": extract_field("TRL"),
@@ -173,6 +175,8 @@ df.columns = df.columns.str.strip()
 df = pd.concat([df, pd.DataFrame([entry])], ignore_index=True)
 required_fields = [
     "DOI",
+    "Title",
+    "Authors",
     "Year",
     "Domain",
     "TRL",
@@ -213,6 +217,22 @@ if domain_other or fault_injection_other:
                 "id": "doi",
                 "attributes": {"label": "DOI", "placeholder": "10.5281/zenodo.XXXXXXX"},
                 "validations": {"required": False},
+            },
+            {
+                "type": "input",
+                "id": "paper_title",
+                "attributes": {"label": "Paper title"},
+                "validations": {"required": True},
+            },
+            {
+                "type": "input",
+                "id": "authors",
+                "attributes": {
+                    "label": "Author(s)",
+                    "placeholder": "Jane Doe, John Smith, Alice Wong",
+                    "description": "Separate each author with a comma (,). Keep the order as it appears in the citation.",
+                },
+                "validations": {"required": True},
             },
             {
                 "type": "input",
