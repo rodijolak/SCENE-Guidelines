@@ -54,11 +54,11 @@ Table 1 provides a summary of the main characteristics as well as sub-characteri
 <br>
 <sup>3</sup> _Empirical Evaluation_: An empirical evaluation involves experimentation or observation, often using real-world deployments, simulations, or prototypes.
 
-## AI Usage in Papers
+## Trends in AI Usage for SCE
 
 <figure>
-  <img src="papers_with_ai_per_year.png" alt="Number of AI-based papers per year" width="600">
-  <figcaption><strong>Figure 2:</strong> Number of AI-based papers published per year.</figcaption>
+  <img src="ai_based_sce_per_year.png" alt="Number of papers with AI-based SCE approach per year" width="600">
+  <figcaption><strong>Figure 2:</strong> Number of papers with AI-based SCE approach per year.</figcaption>
 </figure>
 
 ---

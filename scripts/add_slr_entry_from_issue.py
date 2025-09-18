@@ -38,7 +38,7 @@ def plot_papers_per_category_year(df, category_col, output_path):
 
     # Plot
     pivot_df.plot(kind="bar", stacked=True, figsize=(10, 6))
-    plt.title(f"Number of papers per year classified by {category_col}")
+    # plt.title(f"Number of papers per year classified by {category_col}")
     plt.ylabel("Number of Papers")
     plt.xlabel("Year")
     plt.legend(title=category_col, loc="upper left")
@@ -198,7 +198,7 @@ print("\n--- UPDATED excel CONTENT ---")
 print(tabulate(df, headers="keys", tablefmt="pretty", showindex=False))
 print("--------------------------------\n")
 
-plot_papers_per_category_year(df, "AI", "papers_with_ai_per_year.png")
+plot_papers_per_category_year(df, "AI", "ai_based_sce_per_year.png")
 
 # --- Update issue form ---
 if domain_other or fault_injection_other:
