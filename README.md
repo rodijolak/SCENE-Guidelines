@@ -14,7 +14,7 @@ Figure 1 shows the aspects or characteristics useful for reporting SCE technique
 <br>
 <br>
 
-**1. Applicability**: It is important to report the “Applicability” of the developed SCE technique. The applicability characteristic provides a comprehensive understanding of the technique’s relevance, ensuring that stakeholders can assess the technique’s value and suitability for their specific needs. By detailing the identified security challenges, the creators can highlight and motivate the specific issues the technique addresses. The contribution or goal outlines the intended outcomes, ensuring clarity on what the technique aims to achieve. The application domain helps in identifying the contexts in which the technique is most beneficial, guiding potential users on where and how to apply it effectively. Finally, the use cases demonstrate practical applications, showcasing how the technique can be implemented in real-world scenarios.
+**1. Applicability**: It is important to report the “Applicability” of the developed SCE technique. The applicability characteristic provides a comprehensive understanding of the technique’s relevance, ensuring that stakeholders can assess the technique’s value and suitability for their specific needs. By detailing the identified security challenges, the creators can highlight and motivate the specific issues the technique addresses. The contribution or goal outlines the intended outcomes, ensuring clarity on what the technique aims to achieve. Moreover, it describes the use cases which demonstrate practical applications, showcasing how the technique can be implemented in real-world scenarios. Finally, the application domain helps in identifying the contexts in which the technique is most beneficial, guiding potential users on where and how to apply it effectively.
 
 **2. Technical Characteristics**: Reporting the “Technical Characteristics” of a SCE technique is crucial as it provides a comprehensive understanding of the technique’s operational peculiarities. This category outlines the prerequisites, required resources, attack scenarios, SCE approach, (TRL), and the use of AI, which collectively ensure that stakeholders can accurately assess the feasibility, implementation requirements, and used technologies.
 
@@ -31,9 +31,8 @@ Table 1 provides a summary of the main characteristics as well as sub-characteri
 | **Characteristic** | **Sub-Characteristic** | **Description or Example** |
 |--------------------------|------------------------------------|---------------------------------------------------------------------------------------------|
 | Applicability | Identified Security Challenges | The motivation for using SCE for cybersecurity, e.g., limitations of other approaches and increasing confidence in system resilience. |
-| | Contribution/Goal | The main objective of the study and the main contribution, e.g., a SCE framework for early threat detection. |
+| | Contribution/Goal | The main objective of the study and the main contribution, e.g., a SCE framework for early threat detection, improve resilience, identification of vulnerabilities.  |
 | | Application Domain | E.g., general purpose, IoT, cloud. |
-| | Use Cases | E.g., improve resilience, identification of vulnerabilities. |
 | Technical Characteristics| Prerequisites | E.g., system design, specific data. |
 | | Required Resources | Required hardware and software resources, e.g., sensors, virtual machines. |
 | | Attack Scenarios | Methodology used to derive attack scenarios, e.g., attack trees, attack goals. |
