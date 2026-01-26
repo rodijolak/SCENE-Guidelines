@@ -1,7 +1,8 @@
 
+
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
-title: "SCENE Guidelines and Live SLR for Security Chaos Engineering"          # Repo title can keep the hyphen
+title: "SCENE Guidelines and Live SLR for Security Chaos Engineering"
 type: software
 
 authors:
@@ -21,11 +22,18 @@ keywords:
   - SCENE
   - guidelines
   - research
+  - security chaos engineering
+  - systematic literature review
 
 preferred-citation:
   type: software
-  # Use a space here so GitHub turns it into an underscore in the BibTeX key
+
+  # SHORT TITLE → controls the BibTeX citekey
   title: "SCENE Guidelines"
+
+  # LONG TITLE → controls the BibTeX 'title = {...}' field
+  display-title: "SCENE Guidelines and Live SLR for Security Chaos Engineering"
+
   authors:
     - family-names: Jolak
       given-names: Rodi
@@ -33,10 +41,10 @@ preferred-citation:
       given-names: Ramana Reddy
     - family-names: Mohamad
       given-names: Mazen
+
   year: 2026
   version: "1.0"
   url: "https://github.com/rodijolak/SCENE-Guidelines"
-
 
 # Optional fields you can add later:
 license: "MIT"
