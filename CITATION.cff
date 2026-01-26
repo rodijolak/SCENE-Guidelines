@@ -1,7 +1,7 @@
 
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
-title: "SCENE-Guidelines"          # Repo title can keep the hyphen
+title: "SCENE Guidelines and Live SLR for Security Chaos Engineering"          # Repo title can keep the hyphen
 type: software
 
 authors:
