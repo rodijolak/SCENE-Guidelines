@@ -79,7 +79,7 @@ Make sure to fill in all required fields, and optionally the free-text fields, f
 ## Publication and Citation
 
 - Publication: Rodi Jolak et al. "SCENE: Guidelines for Security Chaos Engineering based on a Systematic Literature Review".
-- How to cite: to appear.
+- How to cite: Click on *Cite this repository*, which is located under the *About* right-side section.
 
 ## Badges
 
