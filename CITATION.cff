@@ -1,3 +1,4 @@
+
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 title: "SCENE-Guidelines"
@@ -10,6 +11,16 @@ authors:
     given-names: Ramana Reddy
   - family-names: Mohamad
     given-names: Mazen
+# If you have ORCIDs, uncomment and add them:
+#  - family-names: Jolak
+#    given-names: Rodi
+#    orcid: "https://orcid.org/0000-0000-0000-0000"
+#  - family-names: Avula
+#    given-names: Ramana Reddy
+#    orcid: "https://orcid.org/0000-0000-0000-0000"
+#  - family-names: Mohamad
+#    given-names: Mazen
+#    orcid: "https://orcid.org/0000-0000-0000-0000"
 
 repository-code: "https://github.com/rodijolak/SCENE-Guidelines"
 url: "https://github.com/rodijolak/SCENE-Guidelines"
@@ -34,3 +45,13 @@ preferred-citation:
   year: 2026
   version: "1.0"
   url: "https://github.com/rodijolak/SCENE-Guidelines"
+  identifiers:
+    - type: cff-id
+      value: "Jolak_SCENE_Guidelines_2026"
+
+# Optional fields you can add later:
+license: "MIT"
+# abstract: "Short description of what SCENE-Guidelines provides."
+# identifiers:
+#   - type: doi
+#     value: "10.5281/zenodo.xxxxxxx"
