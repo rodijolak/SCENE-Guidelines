@@ -8,7 +8,7 @@ authors:
     given-names: Rodi
   - family-names: Avula
     given-names: Ramana Reddy
-  - family-names: Mohammad
+  - family-names: Mohamad
     given-names: Mazen
 
 repository-code: "https://github.com/rodijolak/SCENE-Guidelines"
@@ -29,7 +29,7 @@ preferred-citation:
       given-names: Rodi
     - family-names: Avula
       given-names: Ramana Reddy
-    - family-names: Mohammad
+    - family-names: Mohamad
       given-names: Mazen
   year: 2026
   version: "1.0"
